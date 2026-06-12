@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Préparation du Matériels
+title:  Intégration et Validation de la Chaîne Électronique
 parent: Etapes de fabrication
-nav_order: 1
+nav_order: 3
 ---
 
 # Intégration et Validation de la Chaîne Électronique
