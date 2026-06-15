@@ -33,8 +33,6 @@ Afin d'interagir précisément avec son environnement, le robot doit s'affranchi
     $$\text{Ratio}_Y = 4.88 \text{ pas/mm} \quad | \quad \text{Ratio}_X = 3.45 \text{ pas/mm}$$
 * **Tuning de la Dynamique :** Ajustement fin du délai entre les impulsions (`vitesseDelay`) afin d'éradiquer les phénomènes de résonance acoustique (bruit de grattement mécanique) et d'optimiser le couple moteur.
 
-![Schéma logique de conversion](images/pipeline_informatique.png){: width="300px"}
-
 ---
 
 ## 4.3 Phase 3 : La Vision par Ordinateur & Cartographie Tactique (L'Œil)
