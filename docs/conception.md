@@ -23,7 +23,7 @@ Ce module assure la sécurité immédiate de l'opérateur et de la machine par c
 
 | Aperçu Vue Clé 1 | Aperçu Vue Clé 2 |
 | :---: | :---: |
-| <img src="{{ site.baseurl }}/images/stop_couvercle.png" alt="Couvercle STOP" width="200"/> | <img src="{{ site.baseurl }}/images/stop_boitier.png" alt="Boîtier STOP" width="200"/> |
+| ![Couvercle STOP](images/stop_couvercle.png){: width="200px"} | ![Boitier STOP](images/stop_boitier.png){: width="200px"} |
 
 ---
 
@@ -35,7 +35,7 @@ Interface de fixation et d'isolation électrique protégeant le circuit imprimé
 
 | Vue de Dessus (Carte Intégrée) | Vue de Dessous (Structure Seule) |
 | :---: | :---: |
-| <img src="{{ site.baseurl }}/images/arduino_integ.png" alt="Arduino Intégration" width="200"/> | <img src="{{ site.baseurl }}/images/arduino_berceau.png" alt="Berceau Fixation" width="200"/> |
+| ![Arduino Intégration](images/arduino_integ.png){: width="200px"} | ![Berceau Fixation](images/arduino_berceau.png){: width="200px"} |
 
 ---
 
@@ -46,7 +46,7 @@ Pièce d'accouplement direct gérant l'orientation angulaire de l'effecteur fina
 * **Sécurité :** Conçu pour faire office de fusible mécanique et rompre avant les pignons internes du servomoteur en cas de collision.
 
 <p align="center">
-  <img src="{{ site.baseurl }}/images/adaptateur_servo.png" alt="Adaptateur Servomoteur" width="300"/>
+  <img src="images/adaptateur_servo.png" alt="Adaptateur Servomoteur" width="300"/>
 </p>
 
 ---
@@ -59,7 +59,7 @@ Mécanisme robuste assurant la translation linéaire verticale de la tête de pr
 
 | Pignon Droit | Crémaillère Mobile | Glissières de Guidage en U |
 | :---: | :---: | :---: |
-| <img src="{{ site.baseurl }}/images/pignon.png" alt="Pignon Z" width="180"/> | <img src="{{ site.baseurl }}/images/cremaillere.png" alt="Crémaillère Z" width="180"/> | <img src="{{ site.baseurl }}/images/guidage_1.png" alt="Guidage U 1" width="130"/> <img src="{{ site.baseurl }}/images/guidage_2.png" alt="Guidage U 2" width="130"/> |
+| ![Pignon Z](images/pignon.png){: width="160px"} | ![Crémaillère Z](images/cremaillere.png){: width="160px"} | ![Guidage U 1](images/guidage_1.png){: width="120px"} ![Guidage U 2](images/guidage_2.png){: width="120px"} |
 
 ---
 
@@ -70,7 +70,7 @@ Centrale de gestion de dépression pour la préhension des pièces de puzzle par
 * **Avantage :** Réduction maximale des longueurs de tuyaux pour éliminer les pertes de charge et garantir un relâchement instantané.
 
 <p align="center">
-  <img src="{{ site.baseurl }}/images/boitier_pneumatique.png" alt="Boîtier Pneumatique" width="350"/>
+  <img src="images/boitier_pneumatique.png" alt="Boîtier Pneumatique" width="350"/>
 </p>
 
 ---
@@ -83,9 +83,36 @@ Centrale de gestion de dépression pour la préhension des pièces de puzzle par
 
 | Face Avant (Effecteur & Z) | Face Arrière (Moteur & Galets) |
 | :---: | :---: |
-| <img src="{{ site.baseurl }}/images/chariot_face.png" alt="Chariot Face" width="220"/> | <img src="{{ site.baseurl }}/images/chariot_dos.png" alt="Chariot Dos" width="220"/> |
+| ![Chariot Face](images/chariot_face.png){: width="220px"} | ![Chariot Dos](images/chariot_dos.png){: width="220px"} |
 
 ---
 
 ### 7. Module : Supports d'Ancrage et Fixation de Profilé Suspendu
-Éléments d'extrémité fixes maintenant l'axe linéaire principal au-dessus de l'aire
+Éléments d'extrémité fixes maintenant l'axe linéaire principal au-dessus de l'aire de travail.
+
+* **Structure :** Platines d'équerre pliées à 90° avec empreintes d'écrous hexagonaux noyés pour un serrage propre d'une seule main.
+* **Réglage :** Lumières oblongues supérieures pour calibrer le parallélisme rigoureux du profilé de guidage.
+
+<p align="center">
+  <img src="images/support_ancrage.png" alt="Supports Ancrage" width="300"/>
+</p>
+
+---
+
+### 8. Module : Support de Capteur Fin de Course (Butée Électromécanique)
+Interface de sécurité et de calibration de l'origine machine (*Homing*).
+
+* **Ajustabilité :** Support coulissant à positionnement variable fixé directement dans la rainure du profilé d'aluminium par un écrou en T.
+* **Sécurité :** Interrompt la puissance des moteurs en cas de dépassement de course pour préserver la mécanique.
+
+<p align="center">
+  <img src="images/fin_de_course.png" alt="Support Fin de Course" width="350"/>
+</p>
+
+---
+
+### 9. Portique de Vision : Équerres et Raccords de Profilés en T
+Kit de pièces d'interconnexion rigides pour l'ossature suspendue du système de vision.
+
+* **Composants :** Équerres renforcées à 90°, manchons d'alignement et cube de jonction terminal creux.
+* **Stabilité :** Élimine les micro-oscillations structurelles afin de garantir la netteté et la répétabilité des
