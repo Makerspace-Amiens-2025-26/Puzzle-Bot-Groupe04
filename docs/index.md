@@ -45,7 +45,13 @@ Ici vous publierez la vidéo de votre projet.
 - Une conclusion
 - Si en stockage local : <50mo
 
-[![Video](images/puzzlebot_complet.png))](https://youtube.com/shorts/upBo_AkBkmI?is=co-9ELlqqlOo8z8w)
-
+<p align="center">
+  <a href="https://youtube.com/shorts/upBo_AkBkmI" target="_blank" title="Cliquez pour lancer la vidéo">
+    <img src="images/puzzlebot_complet.png" alt="Regarder la démonstration vidéo" width="450" style="border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"/>
+  </a>
+</p>
+<p align="center">
+  🎬 <b>[Démonstration Vidéo]</b> Cliquez sur la figure ci-dessus pour lancer la vidéo du cycle réel sur YouTube Shorts !
+</p>
 
 ---
