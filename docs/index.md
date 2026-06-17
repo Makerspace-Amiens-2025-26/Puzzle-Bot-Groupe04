@@ -45,7 +45,7 @@ Ici vous publierez la vidéo de votre projet.
 - Une conclusion
 - Si en stockage local : <50mo
 
-[![Video](images/puzzlebot_complet.png))](https://youtube.com/shorts/HgfcO3tNHcU?is=lfZUzeXIRFx6QMwP)
+[![Video](images/puzzlebot_complet.png))](https://youtube.com/shorts/upBo_AkBkmI?is=co-9ELlqqlOo8z8w)
 
 
 ---
