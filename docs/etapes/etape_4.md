@@ -2,6 +2,7 @@
 layout: default
 nav_order: 5
 title: Conception et prototypage
+nav_order: 4
 ---
 
 # 4. Architecture Informatique, Vision IA et Algorithmique (Software Stack)
