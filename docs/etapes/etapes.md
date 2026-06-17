@@ -13,7 +13,7 @@ Le processus de fabrication est divisé en plusieurs étapes clés :
 
 1. [Préparation des Matériaux](etape_1)
 2. [Assemblage](etape_2)
-3. [Finition]()
+3. [Intégration et Validation de la Chaîne Électronique](etape_3)
 4. [Contrôle Qualité]()
 
 ## Commencer
