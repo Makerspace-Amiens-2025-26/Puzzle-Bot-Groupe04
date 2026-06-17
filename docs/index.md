@@ -16,7 +16,7 @@ Bienvenue sur la plateforme officielle de documentation de notre **PuzzleBot**. 
 ## 🎯 Le Concept en quelques mots
 Le **PuzzleBot** est une machine cartésienne automatisée conçue pour analyser un espace de jeu, identifier des pièces géométriques éparpillées, calculer leur orientation et les assembler de manière 100 % autonome grâce à un système embarqué couplé à une intelligence artificielle de vision 2D.
 
-[Accéder au Modèle OnShape](https://cad.onshape.com/documents?resourceType=resourcecompanyowner&nodeId=66e1be0177b0a72e5f59d62e){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Accéder au Modèle OnShape](hhttps://cad.onshape.com/documents/84e88f4e375eb4ed6fb94771/w/f35ce4c2f78cc824098f0191/e/25b35cf47e563bc8a74c1f47){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Explorer le Dépôt GitHub](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe04){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
