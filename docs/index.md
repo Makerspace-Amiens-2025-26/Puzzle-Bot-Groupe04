@@ -5,27 +5,32 @@ title: Accueil
 permalink: /
 ---
 
-# Bienvenue sur notre documentation
+# 🤖 Projet : PUZZLE-BOT
 
-Bienvenue dans la documentation du projet XY. Ce site a pour but de fournir toutes les informations nécessaires pour comprendre, utiliser et reproduire efficacement notre projet.
+Bienvenue sur la plateforme officielle de documentation de notre **PuzzleBot**. Cet espace rassemble l'intégralité de nos travaux, de notre code et de nos modèles mécaniques afin de vous permettre de comprendre l'architecture du système ou de reproduire la machine chez vous.
 
-[Notre projet sur Onshape](https://cad.onshape.com/documents/2860ed3d58f1b518e6857770/w/82b3c0e474623135ccb76fa3/e/0cab16137cd459ee83ebe56e?renderMode=0&uiState=6936dc0e23fecc27d34268b2){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Notre repo GitHub](https://github.com/Makerspace-Amiens/template-project){: .btn .fs-5 .mb-4 .mb-md-0 }
+*Note de l'équipe : Cette documentation a été entièrement rédigée par nos soins, avec nos propres mots et notre ressenti de terrain (sans génération automatique de texte). Si quelques coquilles ou fautes d'orthographe se sont glissées au fil des pages, nous sollicitons votre indulgence ! Bonne exploration !!!*
 
-<iframe height="600" width="100%" src="https://modelembedder.net/embed?did=2860ed3d58f1b518e6857770&wvm=v&wvmid=6280fca954e7770df59e5a2f&eid=0cab16137cd459ee83ebe56e&elementType=ASSEMBLY" frameborder="0"></iframe>
+---
 
-{: .warning }
->Pour intégrer la visualisation de votre projet Onshape, utilisez le site https://modelembedder.net . Activez le partage par lien via l'outil de partage de Onshape. n'oubliez pas d'activer l'option "export". Puis completez l'iframe ci-dessus avec le lien généré par le site https://modelembedder.net. Vous pouvez mettre à jour également le bouton avec le lien de partage de votre modèle.
+## 🎯 Le Concept en quelques mots
+Le **PuzzleBot** est une machine cartésienne automatisée conçue pour analyser un espace de jeu, identifier des pièces géométriques éparpillées, calculer leur orientation et les assembler de manière 100 % autonome grâce à un système embarqué couplé à une intelligence artificielle de vision 2D.
 
+[Accéder au Modèle OnShape](https://cad.onshape.com/documents/2860ed3d58f1b518e6857770/w/82b3c0e474623135ccb76fa3/e/0cab16137cd459ee83ebe56e?renderMode=0&uiState=6936dc0e23fecc27d34268b2){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Explorer le Dépôt GitHub](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe04){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-## À propos du Projet
+---
 
-Décrivez ici en quelques lignes l'objectif et l'aperçu général de votre projet. Quel est son but ? À qui est-il destiné ? Quels problèmes cherche-t-il à résoudre ?
+## 🔍 Origine et Contexte du Projet
+
+### 💡 Notre Inspiration
+Sur le plan mécanique et cinématique, la structure globale de notre robot s'inspire directement du design et du châssis des machines à commande numérique open-source de type **Shapeoko CNC**. Nous avons repris cette architecture de portique mobile robuste à deux axes (X, Y) guidés par des rails profilés pour l'adapter aux exigences de vitesse et de répétabilité d'un cycle industriel de manipulation de type *Pick & Place*.
+
+### 🎓 Cadre Académique
+Ce projet s'inscrit dans le cadre de notre cursus d'ingénieur en informatique et technologies innovantes à **UniLaSalle Amiens**. Bien qu'il réponde à un cahier des charges académique strict (alliant vision par ordinateur, métrologie et mécanique de précision), nous avons conçu ce robot comme un projet ouvert et ludique. Quiconque dispose du matériel requis, de composants imprimés en 3D et d'un peu de patience peut s'en inspirer pour concevoir sa propre version.
 
 
 ## Poster
-
-Ici vous publierez le poster de votre projet.
 
 ![Poster projet](images/poster_groupe_4.png)
 
