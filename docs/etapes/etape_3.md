@@ -5,68 +5,67 @@ parent: Etapes de fabrication
 nav_order: 3
 ---
 
-# Intégration et Validation de la Chaîne Électronique
+# 3. Architecture Électronique, Câblage et Gestion de Puissance (Le Système Physique)
 
-Ce module central regroupe l'ensemble des systèmes nécessaires aux fonctions de déplacement linéaire, de positionnement angulaire et de manipulation par le vide du **PuzzleBot**.
-
----
-
-### 1. Partie Motorisation et Guidage (Axes X, Y et Z)
-
-Ce sous-ensemble gère la cinématique cartésienne et la précision des déplacements physiques du robot au-dessus de l'aire de tri.
-
-* **Moteur Pas-à-Pas NEMA 17 :**
-    * *Fonction :* Assure la translation horizontale principale (Axe X/Y) du chariot le long du rail de guidage. Couplé à une poulie synchrone, il convertit les impulsions électriques en un positionnement micrométrique.
-* **Servomoteur MG996R (Pignons métalliques) :**
-    * *Fonction :* Gère l'actionnement mécanique vertical (Axe Z ou $\theta$). Sa configuration à pignons renforcés supporte les cycles répétitifs de descente et de remontée de l'effecteur terminal sans jeu mécanique.
-* **Galets de guidage (Roues en V / V-Slot Wheels) :**
-    * *Fonction :* Positionnés en configuration isostatique sous le chariot imprimé, ces galets épousent les rainures du profilé d'aluminium pour garantir un coulissement fluide et supprimer les vibrations.
-* **Courroie crantée GT2 (6 mm) et Clips de serrage :**
-    * *Fonction :* Assure la transmission mécanique directe entre la poulie du moteur NEMA 17 et le corps du chariot mobile.
-
-| Vue Face Avant (Axe Z & Guidage) | Vue Face Arrière (Intégration Moteur) |
-| :---: | :---: |
-| ![Chariot Face](images/chariot_face.png) | ![Chariot Dos](images/chariot_dos.png) |
+Cette partie décrit l'architecture matérielle électrique, la distribution des signaux de commande depuis le microcontrôleur Arduino Uno / CNC Shield, et la résolution des problématiques de puissance pour les actionneurs pneumatiques et mécaniques.
 
 ---
 
-### 2. Partie Préhension (Système d'Aspiration Pneumatique)
-
-Ce bloc assure la saisie et la dépose des pièces par gestion des flux pneumatiques et création d'une dépression localisée.
-
-* **Mini Pompe à Vide (12V DC) :**
-    * *Fonction :* Génère le vide pneumatique au sein du circuit d'aspiration. Sa puissance permet d'établir une force d'adhérence instantanée dès le contact avec la pièce.
-* **Électrovanne de relâche (Solenoid Valve 12V) :**
-    * *Fonction :* Module de rupture de charge. En s'ouvrant sur commande de l'Arduino, elle réintroduit instantanément la pression atmosphérique dans le circuit de fluide, cassant la dépression pour libérer proprement la pièce.
-* **Ventouse en silicone (avec connecteur pneumatique) :**
-    * *Fonction :* Effecteur final en contact direct avec l'objet. Sa souplesse compense les micro-irrégularités de surface pour maximiser l'étanchéité sans marquer le matériau.
-
-<p align="center">
-  <img src="images/boitier_pneumatique.png" alt="Bloc d'Intégration Pneumatique" width="450"/>
-</p>
+## 3.1 Gestion et Calibrage de l'Axe Horizontal (Axes X et Y)
+Le déplacement horizontal synchrone repose sur un couplage de deux moteurs pas-à-pas configurés en mode Maître/Esclave.
+* **Cinématique :** Le moteur situé à gauche agit comme le moteur principal (Maître) ; c'est lui qui initie et entraîne mécaniquement le mouvement du moteur situé à droite (Esclave).
+* **Raccordement Pilotes (Drivers) :** Chaque moteur est piloté individuellement via un driver dédié (A4988 ou DRV8825) inséré sur le CNC Shield.
+* **Brochage Arduino/Shield :** * Le moteur de gauche (Maître) est connecté aux broches de l'axe **Y**.
+  * Le moteur de droite (Esclave) est connecté aux broches de l'axe **X**.
 
 ---
 
-### 3. Composants Électroniques de Puissance et Commande
-
-Ce bloc superposé centralise l'intelligence embarquée de la machine ainsi que la distribution d'énergie vers les différents actionneurs.
-
-* **Calculateur Arduino Uno :**
-    * *Fonction :* Unité centrale de traitement. Il interprète les commandes de mouvement, synchronise les signaux de commande et supervise la sécurité globale du système.
-* **CNC Shield V3 :**
-    * *Fonction :* Carte d'extension d'interface de puissance. Directement empilée sur l'Arduino, elle distribue les lignes d'alimentation stabilisées et rassemble la connectique des moteurs, capteurs de fin de course et vannes de fluide.
-* **Drivers de moteurs pas-à-pas (A4988 / DRV8825) :**
-    * *Fonction :* Convertisseurs de puissance hacheurs. Ils traduisent les signaux logiques de bas niveau de l'Arduino en impulsions de courant calibrées (réglées via $V_{ref}$) adaptées aux bobinages des moteurs.
-
-<p align="center">
-  <img src="images/arduino_integ.png" alt="Intégration Centrale Arduino et Shield" width="450"/>
-</p>
+## 3.2 Gestion et Calibrage de l'Axe Vertical (Axe Z)
+La translation verticale permettant l'approche et la plongée de l'équipage mobile est gérée par un moteur pas-à-pas indépendant.
+* **Cinématique :** Il déplace verticalement le compartiment supérieur supportant l'effecteur.
+* **Raccordement :** Le moteur est relié à son driver dédié, directement interfacé avec les broches de l'axe **Z** de la carte de commande Arduino.
 
 ---
 
-### 4. Quincaillerie et Structure Bâtie
+## 3.3 Sécurité Matérielle : Boîtier d'Arrêt d'Urgence (Coupure Directe)
+Le système intègre un protocole de sécurité à déclenchement matériel pur.
+* **Principe Électrique :** Le bouton "coup de poing" d'arrêt d'urgence est câblé **en série** directement sur la ligne d'alimentation principale **12V** qui alimente la puissance de la carte de commande.
+* **Avantage Sécurité :** Cette configuration coupe instantanément l'énergie mécanique par rupture de ligne. Elle est 100 % matérielle et **ne nécessite aucun code ni programmation Arduino** pour fonctionner, éliminant tout risque de défaillance logicielle (*freeze* du script).
 
-* **Profilé Aluminium 2020 (V-Slot noir) :**
-    * *Fonction :* Poutre structurelle maîtresse de la machine, servant simultanément de châssis rigide et de chemin de roulement mécanique de précision.
-* **Inserts filetés en laiton (M3) & Visserie métrique (M3 / M5) :**
-    * *Fonction :* Liaison mécanique durable. Insérés à chaud au sein de la structure polymère imprimée en 3D, ces inserts fournissent des filetages métalliques résistants aux contraintes mécaniques et aux vibrations répétées.
+---
+
+## 3.4 Calibration des Capteurs Fins de Course (*Endstops*)
+Afin de sécuriser la structure contre les collisions et de permettre le calage de l'origine machine (*Homing*), le montage utilise deux capteurs électromécaniques (butées).
+* **Configuration des Axes :**
+  1. **Capteur Bas :** Positionné pour intercepter et stopper la course du gantry horizontal (liant les moteurs gauche et droit).
+  2. **Capteur Haut :** Positionné pour intercepter et stopper la course verticale du moteur de l'axe Z.
+* **Brochage d'un Capteur (3 Broches) :**
+  * `VCC` : Alimentation logique (5V).
+  * `GND` : Masse commune, reliée directement au pôle GND de l'Arduino.
+  * `SIGNAL` : Relié à une broche d'entrée numérique (PIN) au choix sur le CNC Shield (ex: `X-Minus` / `Y-Minus`).
+
+---
+
+## 3.5 Actionnement de l'Effecteur Terminal (Pignon-Crémaillère)
+La manipulation fine et l'orientation des pièces d'assemblage font intervenir deux servomoteurs distincts configurés pour les mouvements de translation et de rotation :
+* **Translation (Axe Z secondaire) :** Gère la descente fine de la tête.
+* **Rotation (Axe R / $\theta$) :** Assure la correction angulaire de la pièce avant dépose.
+* **Connexion :** Ils sont branchés directement sur les sorties PWM dédiées (généralement associées aux broches de commande des servomoteurs du CNC Shield).
+
+---
+
+## 3.6 Isolation de Puissance Pneumatique (Pompe, Électrovanne & Module MOSFET)
+L'étape de saisie active par dépression a nécessité la résolution d'un conflit de tension entre la logique de commande et la puissance des actionneurs.
+
+* **Problématique Initiale :** Le signal logique délivré par l'Arduino est limité à **5V**, ce qui était insuffisant pour alimenter simultanément la mini-pompe à vide et l'électrovanne, ces deux composants nécessitant une alimentation stable et puissante en **12V**.
+* **Solution Technique :** Intégration d'une carte d'interface de puissance à **transistor MOSFET**, imprimée et gravée en suivant le schéma technique de référence fourni par l'enseignant. Ce module fait office de relais statique électronique.
+* **Logique de Fonctionnement et Câblage :**
+  * **Côté Commande (Basse Puissance) :** L'Arduino envoie un signal logique 5V (état `HIGH`) sur la grille (*Gate*) du MOSFET.
+  * **Côté Puissance (Haute Puissance) :** Le MOSFET commute et ferme le circuit de puissance **12V**, délivrant l'ampérage nécessaire pour activer de concert la pompe (aspiration) et l'électrovanne (maintien/décharge).
+
+| Actionneur Pneumatique | Tension requise | Rôle Système | Commande Logicielle |
+| :---: | :---: | :---: | :---: |
+| Mini-Pompe à Vide | 12 V | Génération de la dépression (Saisie) | Signal numérique via MOSFET |
+| Électrovanne 3 voies | 12 V | Cassage du vide (Relâchement instantané) | Signal inversé/coordonné |
+
+*(Note : Pour le compte-rendu final sur votre site GitHub Pages, vous pourrez insérer ci-dessous le schéma de câblage réel ou la photo de votre carte MOSFET afin d'illustrer la correspondance exacte des borniers d'alimentation `V+ / V-` de la pompe et de la vanne).*
