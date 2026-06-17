@@ -1,7 +1,7 @@
 ---
 layout: default
-nav_order: 5
-title: Conception et prototypage
+title:  Informatique
+parent: Etapes de fabrication
 nav_order: 4
 ---
 
