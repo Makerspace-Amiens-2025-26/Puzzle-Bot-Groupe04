@@ -40,6 +40,7 @@ Ici vous publierez la vidéo de votre projet.
 - Une conclusion
 - Si en stockage local : <50mo
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/wlW8UmoEtBygf42J/0.jpg)](https://youtube.com/shorts/_kiVlXmjaxM?is=wlW8UmoEtBygf42J)
 <video src="images/VIDEO.mp4" controls title="Title" style="width: 100%;"></video>
 
 ---
